@@ -1,0 +1,65 @@
+:root {
+  --font-color: #f1f1f1;
+  --shadow: 4px 4px 0 #00000052;
+  --wt-font-size: 64pt;
+  --wm-font-size: 44pt;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --shadow: 3px 3px 0 #00000052;
+    --wt-font-size: 40pt;
+    --wm-font-size: 26pt;
+  }
+}
+
+.WelcomeMessage-panel {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background-color: #00000069;
+}
+.WelcomeMessage {
+  display: inline-flex;
+  flex-flow: column wrap;
+}
+.WelcomeMessage > span > span {
+  display: block;
+  text-align: center;
+}
+.welcome-title {
+  font-weight: 900;
+  font-size: var(--wt-font-size);
+  color: var(--font-color);
+  text-shadow: var(--shadow);
+}
+.welcome-message {
+  font-weight: normal;
+  font-size: var(--wm-font-size);
+  color: var(--font-color);
+  text-shadow: var(--shadow);
+}
+
+.fade-appear {
+  opacity: 0.01;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 1300ms ease-in;
+}

@@ -1,0 +1,37 @@
+:root {
+  --bg-color-r: 255;
+  --bg-color-g: 173;
+  --bg-color-b: 80;
+  --bg-color: rgb(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b));
+  --bg-brighten-amount: 50;
+  --bg-darken-amount: 50;
+  --bg-color-brighter: rgb(calc(var(--bg-color-r) + var(--bg-brighten-amount)), calc(var(--bg-color-g) + var(--bg-brighten-amount)), calc(var(--bg-color-b) + var(--bg-brighten-amount)));
+  --bg-color-darker: rgb(calc(var(--bg-color-r) - var(--bg-darken-amount)), calc(var(--bg-color-g) - var(--bg-darken-amount)), calc(var(--bg-color-b) - var(--bg-darken-amount)));
+  --bg-gradient: linear-gradient(to bottom, var(--bg-color-brighter) 0%, var(--bg-color) 20%, var(--bg-color) 80%, var(--bg-color-darker) 100%);
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.App {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #ffad50;
+}
+.App-items-enter {
+  opacity: 0.01;
+}
+.App-items-enter.App-items-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.App-items-leave {
+  opacity: 1;
+}
+.App-items-leave.App-items-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
